@@ -53,7 +53,7 @@ output_notebook()  # 出力先をノートブックに設定
 show(fig)
 ```
 
-![png](1.png)
+![png](files/1.png)
 
 
 BokehではイベントにJavaScriptのコードを結び付けることができ、これを利用して機能を拡張します。イベントにコードを結びつける例は[ここ](https://docs.bokeh.org/en/latest/docs/user_guide/interaction/callbacks.html)にあります。この例を参考に図中のマウスポインターの位置を取得して表示させているのが以下です。
@@ -88,7 +88,7 @@ output_notebook()  # 出力先をノートブックに設定
 show(row(fig, div))
 ```
 
-![png](2.png)
+![png](files/2.png)
 
 Pythonの世界からJavaScriptを呼んじゃってます。Bokeh恐るべしです。
 
@@ -106,7 +106,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](3.png)
+![png](files/3.png)
 
 JavaScriptの世界には引数を介して持ち込みます。CustomJSのcodeの中ではcb_objという変数があって、 ```{origin:f, sx:550, sy:60, x:62.34, y:2109.90}```という形をしています。そこで、ラベルの表示にy軸の座標を整数化したものを表示するには以下のようにします。
 
@@ -128,7 +128,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](4.png)
+![png](files/4.png)
 
 マウスポインターの動きに追従してy軸の値がラベルの中に表示されますね。ラベルにはx,yという属性があって表示位置を指定できるので、マウスポインターの位置にラベルが表示されるようにするには以下のようにします。
 
@@ -150,7 +150,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](5.png)
+![png](files/5.png)
 
 うまくいきました。それではここでラベルの表示位置をy軸のそばにするため、label.xを0にしてみます。
 
@@ -172,7 +172,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](6.png)
+![png](files/6.png)
 
 一見、うまくいっているように見えます。しかし、図をドラッグして左右に動かすとダメなことがわかります。図の左端ではなく、先頭のデータの位置に表示されています。これはlabel.xがスクリーン座標ではなくデータ位置だからです。
 
@@ -196,7 +196,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](7.png)
+![png](files/7.png)
 
 Labelには色々とオプションがあるので、見え方を調整してみます。その際、図表の外側に表示するためにはrender_modeを'css'にする必要があります。
 
@@ -219,7 +219,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](8.png)
+![png](files/8.png)
 
 それでは今度は日付を表示するようにしてみましょう。
 
@@ -241,7 +241,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](9.png)
+![png](files/9.png)
 
 失敗です。x軸は土日を詰めるために日付そのものではなくデータ位置になっているのでした。データ位置と日付の対応をとるためには元データを渡す必要がありますが、うまくいくのでしょうか。
 
@@ -265,7 +265,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](10.png)
+![png](files/10.png)
 
 簡単にできてしまいました。Bokeh恐るべし。実はdisplay_eventのsourceに最初は
 targetそのものを指定したのですが、JSONに変換できないというエラーになりました。
@@ -301,7 +301,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](11.png)
+![png](files/11.png)
 
 範囲外でうまくラベルが消えるようになりました。
 
@@ -355,7 +355,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](12.png)
+![png](files/12.png)
 
 続いて次のような2軸のグラフの場合に、右側に値を表示することを考えます。
 
@@ -400,7 +400,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](13.png)
+![png](files/13.png)
 
 右側にラベルを表示する時に困るのはそのx座標をどうするかです。左側なら0と指定しておけばよいですが、右側では図の横幅が必要となります。しかも、固定値ではなく図のサイズに応じて。いろいろ探ってみたところ、JavaSriptでのcb_objに'origin'という属性があり、ここから図のDOMオブジェクトにアクセスできることがわかりました。
 
@@ -464,7 +464,7 @@ output_notebook()
 show(fig)
 ```
 
-![png](14.png)
+![png](files/14.png)
 
 最後に[以前の記事](https://www.soliton-cyber.com/blog/colab-bokeh-candlestick)で作成した範囲指定付きローソク足に適用します。
 
@@ -524,6 +524,6 @@ output_file('soliton.html') # ファイルにも出力
 show(column(fig, select, sizing_mode='stretch_width'))  # 図を表示
 ```
 
-![png](15.png)
+![png](files/15.png)
 
 以上です。
