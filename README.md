@@ -1,8 +1,8 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Soliton-Analytics-Team/CrosshairLabel/blob/main/CrosshairLabel.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/saliton/CrosshairLabel/blob/main/CrosshairLabel.ipynb)
 
 # Bokehの図にマウスポインタの位置の値を表示する拡張機能を付加する方法
 
-[以前の記事](https://www.soliton-cyber.com/blog/colab-bokeh-candlestick)でインタラクティブなローソク足をBokehで作成しました。その際、値を吹き出しで表示する機能は邪魔なので除いてしまいました。しかし、十字線が表示されるとはいえ、目視で値を読み取るのはちょっと苦労します。そこでよくあるのは十字線に連動してその値を表示するGUIですが、この機能はBokehには標準機能として用意されていません。本記事ではBokehの機能拡張を利用してこれを実現します。
+[以前の記事(Google Colabでグリグリ動くローソク足をBokehで生成してみた)](https://qiita.com/saliton/items/6249d92f266ef435a5f0)でインタラクティブなローソク足をBokehで作成しました。その際、値を吹き出しで表示する機能は邪魔なので除いてしまいました。しかし、十字線が表示されるとはいえ、目視で値を読み取るのはちょっと苦労します。そこでよくあるのは十字線に連動してその値を表示するGUIですが、この機能はBokehには標準機能として用意されていません。本記事ではBokehの機能拡張を利用してこれを実現します。
 
 まずはデータを取得します。
 
@@ -466,7 +466,7 @@ show(fig)
 
 ![png](files/14.png)
 
-最後に[以前の記事](https://www.soliton-cyber.com/blog/colab-bokeh-candlestick)で作成した範囲指定付きローソク足に適用します。
+最後に[以前の記事](https://qiita.com/saliton/items/6249d92f266ef435a5f0)で作成した範囲指定付きローソク足に適用します。
 
 
 ```Python
